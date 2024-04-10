@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playpen+Sans">
     <title>Clock</title>
     <style>
-        *{
+        * {
             font-family: Playpen sans;
             background-color: rgb(145, 149, 255);
         }
-        .container{
+
+        .container {
             display: flex;
             width: 100vw;
             height: 100vh;
             justify-content: center;
             align-items: center;
         }
-        .date_1{
+
+        .date_1 {
             font-size: 150px;
-            background-color: rgba(255,255,255,0.1);
+            background-color: rgba(255, 255, 255, 0.1);
             box-shadow: 0 5px 10px rgba(78, 78, 78, 0.8);
-            text-shadow: 0 20px 15px rgba(0,0,0,0.5);
+            text-shadow: 0 20px 15px rgba(0, 0, 0, 0.5);
             border-radius: 8px;
             color: white;
             /*padding: 50px;*/
@@ -29,14 +32,16 @@
             text-align: center;
             padding: 30px 0;
         }
-        .colon{
+
+        .colon {
             font-size: 200px;
             color: white;
-            text-shadow: 0 20px 15px rgba(0,0,0,0.5);
+            text-shadow: 0 20px 15px rgba(0, 0, 0, 0.5);
             width: 10vw;
             text-align: center;
         }
-        .am_pm{
+
+        .am_pm {
             font-size: 50px;
             position: relative;
             border-radius: 8px;
@@ -44,12 +49,13 @@
             color: white;
             padding: 20px;
             margin-left: 20px;
-            background-color: rgba(255,255,255,0.1);
+            background-color: rgba(255, 255, 255, 0.1);
             box-shadow: 0 5px 10px rgba(78, 78, 78, 0.8);
-            text-shadow: 0 20px 15px rgba(0,0,0,0.5);
+            text-shadow: 0 20px 15px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="date_1" id="hours_here"></div>
@@ -60,22 +66,23 @@
         <div class="am_pm" id="am_pm"></div>
     </div>
     <script>
-        var audio = new Audio('tiktok.mp3');
-        function clock(){
-        //audio.play();
-        let dt = new Date();
-        let hours = dt.getHours();
-        let AmOrPm = hours >= 12 ? 'PM' : 'AM';
-        hours = (hours % 12) || 12;
-        let minutes = dt.getMinutes() ;
-        let seconds = dt.getSeconds() ;
-        let hours_here = document.getElementById('hours_here').innerHTML= hours;
-        let minutes_here = document.getElementById('minutes_here').innerHTML= minutes;
-        let seconds_here = document.getElementById('seconds_here').innerHTML= seconds;
-        let am_pm = document.getElementById('am_pm').innerHTML= AmOrPm;
+        //var audio = new Audio('tiktok.mp3');
+        function clock() {
+            //audio.play();
+            let dt = new Date();
+            let hours = dt.getHours();
+            let AmOrPm = hours >= 12 ? 'PM' : 'AM';
+            hours = (hours % 12) || 12;
+            let minutes = dt.getMinutes();
+            let seconds = dt.getSeconds();
+            let hours_here = document.getElementById('hours_here').innerHTML = hours;
+            let minutes_here = document.getElementById('minutes_here').innerHTML = minutes;
+            let seconds_here = document.getElementById('seconds_here').innerHTML = seconds;
+            let am_pm = document.getElementById('am_pm').innerHTML = AmOrPm;
         }
 
         setInterval(clock, 1000);
     </script>
 </body>
+
 </html>
